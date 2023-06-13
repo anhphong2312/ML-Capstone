@@ -43,13 +43,13 @@ All the model performances are being evaluated and compared to identify the best
 
 ## Findings
 As we see in the performance plots, the Regression model using Deep Neural Network seems to perform best with best MSE value, but worst CPU runtime. From a distance, the second best model based on MSE score is the Ridge Regularization with TransformTargetRegression techniques.
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 Overall, this is a significant step to use Regression technique to determine the output measurement Vehicle Speed, given the reduced order model (ROM) of the system dynamics. Please note that, most of the significant features related to the Vehicle speed are intentially dropped based on VIF scores, Still the model is able to deduce the Vehicle speed based on the hidden relationship among data points, i.e. hidden Non-linear system dynamics.
 ![Alt text](results/RegressionModels.png)
 
 Furthermore, using the Classifier models to back out the control inputs (such as the Brake Voltage), the results are also impressive. Out of all the models tested, Random Forest, Ada Boost, and Gradient Boost are the winners, with test accuracies in the range of 98+%, which indicates that the data-driven models can deduce the controls inputs values very well. Using this, we can forecast the next controls input values in descrete time, and use it to controls the hidden system dynamics of the vehicles!
-![Alt text](image-2.png)
+![Alt text](images/image-2.png)
 ![Alt text](results/ClassifierModels.png)
 
 Yet, it is crucial to highlight that the other models still give some helpful insights into the variables that influence the system dynamics. For example, the linear regression model emphasizes the significance of the Brake Voltage to the vehicle speed, while the ridge and lasso regression models stress the significance of the ambient temperature.
@@ -63,7 +63,7 @@ The results are very encouraging and promising, such that:
   * run the models with other datasets of other trips
   * run the models with Multiple Outputs (for all other controls inputs)
   * deducing the system dynamics (i.e. System identification) once we have the controls inputs and the output measurements from the 2 techniques above.
-  ![Alt text](image.png)
+  ![Alt text](images/image.png)
   * anomaly detection models for time-series for predictive maintenance purposes
 
 ## Conclusion
